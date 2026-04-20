@@ -1,0 +1,14 @@
+﻿title: TestYarnScript
+---
+Speaker: This is some test dialogue! I don't know what I'm putting here.
+Speaker: FUck you! You ficking Dick!
+-> Hey thats not nice
+    <<jump FightBack>>
+-> oUgh... Leave and run away
+===
+
+title: FightBack
+---
+Speaker: I do not care.
+Speaker: Explode.
+===
