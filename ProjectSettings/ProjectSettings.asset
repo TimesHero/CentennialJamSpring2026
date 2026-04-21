@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: RudysSpringJamCrew
   productName: CentennialJamSpring2026
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -772,7 +772,7 @@ PlayerSettings:
   qnxGraphicConfPath: 
   apiCompatibilityLevel: 6
   captureStartupLogs: {}
-  activeInputHandler: 1
+  activeInputHandler: 2
   windowsGamepadBackendHint: 0
   cloudProjectId: 3d6a957c-5442-41ef-a596-331f6a16f108
   framebufferDepthMemorylessMode: 0
