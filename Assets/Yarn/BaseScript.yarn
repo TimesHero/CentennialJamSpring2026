@@ -1,0 +1,5 @@
+﻿title: GameOpening
+---
+Narrator: This is the opening text! You're speed dating cryptids!
+<<GetCharacter GameManager>>
+===
