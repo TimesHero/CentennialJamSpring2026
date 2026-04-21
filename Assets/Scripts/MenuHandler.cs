@@ -40,6 +40,7 @@ public class MenuHandler : MonoBehaviour
     public void ToggleInstructionsPanel()
     {
         InstructionsPanel.SetActive(!InstructionsPanel.active);
+
     }
 
 }
