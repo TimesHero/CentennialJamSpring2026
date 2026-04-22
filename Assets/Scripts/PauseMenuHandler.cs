@@ -48,6 +48,7 @@ public class PauseMenuHandler : MonoBehaviour
      */
 
     //Button sound effects
+    [HideInInspector] public AudioManager audioManager;
     public AudioClip[] buttonClickSounds; //Sound Effect Array, plays when the buttons are clicked
     public AudioSource audioSource; //Plays the sfxes
 
@@ -57,6 +58,7 @@ public class PauseMenuHandler : MonoBehaviour
     // Informs this object of it's AudioSource
     void Start()
     {
+        audioManager = FindAnyObjectByType<AudioManager>();
         audioSource = GetComponent<AudioSource>(); //Ensures the audioSource is the AudioSource of the object
 
         //Ensures the game starts unpaused
@@ -99,9 +101,10 @@ public class PauseMenuHandler : MonoBehaviour
         if (paused == false)
         {
             //Click SFX
-            int buttonClickSoundsIndex = Random.Range(0, buttonClickSounds.Length); //.Length is exclusive, determines which sfx to play
-            if (audioSource != null) audioSource.PlayOneShot(buttonClickSounds[buttonClickSoundsIndex], 0.7F); //Plays a cool sfx
-            Debug.Log("Click");
+            //int buttonClickSoundsIndex = Random.Range(0, buttonClickSounds.Length); //.Length is exclusive, determines which sfx to play
+            //if (audioSource != null) audioSource.PlayOneShot(buttonClickSounds[buttonClickSoundsIndex], 0.7F); //Plays a cool sfx
+            //Debug.Log("Click");
+            if (audioManager != null) audioManager.PlaySFXRandomPitch(audioManager.pauseSound);
 
             //Pausing
             paused = true; //tells this script the game is paused
@@ -115,10 +118,8 @@ public class PauseMenuHandler : MonoBehaviour
     public void ButtonResume()
     {
         if (paused == true) {
-            //Click SFX
-            int buttonClickSoundsIndex = Random.Range(0, buttonClickSounds.Length); //.Length is exclusive, determines which sfx to play
-            if (audioSource != null) audioSource.PlayOneShot(buttonClickSounds[buttonClickSoundsIndex], 0.7F); //Plays a cool sfx
-            Debug.Log("Clack");
+            //Click SFX (Handled by ButtonPress)
+            if (audioManager != null) audioManager.PlaySFXRandomPitch(audioManager.pauseSound);
 
             //Resuming
             Time.timeScale = 1f; //resumes time
@@ -131,9 +132,7 @@ public class PauseMenuHandler : MonoBehaviour
     // Activates when the ButtonMainMenu is pressed, returns the player to the main menu.
     public void ButtonMainMenu()
     {
-        //Click SFX
-        int buttonClickSoundsIndex = Random.Range(0, buttonClickSounds.Length); //.Length is exclusive, determines which sfx to play
-        if (audioSource != null) audioSource.PlayOneShot(buttonClickSounds[buttonClickSoundsIndex], 0.7F); //Plays a cool sfx
+        //Click SFX (Handled by ButtonPress)
 
         SceneManager.LoadScene("MainMenu"); //Loads the scene titled "MainMenu". uses UnityEngine.SceneManagement;
     }
@@ -141,9 +140,7 @@ public class PauseMenuHandler : MonoBehaviour
     //When run, the application will be exited.
     public void ButtonExit()
     {
-        //Click SFX
-        int buttonClickSoundsIndex = Random.Range(0, buttonClickSounds.Length); //.Length is exclusive, determines which sfx to play
-        if (audioSource != null) audioSource.PlayOneShot(buttonClickSounds[buttonClickSoundsIndex], 0.7F); //Plays a cool sfx
+        //Click SFX (Handled by ButtonPress)
 
 #if UNITY_EDITOR //copied from Ford's code, stops the editor running
             UnityEditor.EditorApplication.isPlaying = false; 
