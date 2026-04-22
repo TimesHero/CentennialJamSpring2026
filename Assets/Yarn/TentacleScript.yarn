@@ -1,0 +1,26 @@
+﻿title: CthulhuDialogueStart
+---
+<<declare $CthulhuName = "<color=green>Cthulhu</color>">>
+<<declare $CthulhuStanding = 0>>
+
+<<TogglePortraitAnim GameManager>>
+Here comes... I'm not sure who that is. Looks like Cthulhu though!
+{$CthulhuName}: Greetings.
+-> Hi!!
+    <<set $CthulhuStanding = $CthulhuStanding + 1>>
+    <<SetPortraitSprite GameManager "Happy">>
+    {$CthulhuName}: Yaaay!
+-> Actually, you are ugly.
+    <<set $CthulhuStanding = $CthulhuStanding - 1>>
+    <<SetPortraitSprite GameManager "Upset">>
+    {$CthulhuName}: Rude...
+
+<<TogglePortraitAnim GameManager>>
+<<if $CthulhuStanding < 0>>
+    That... could have gone better...
+<<else>>
+    <<SetLiked GameManager>>
+    That... went kind of well!
+<<endif>>
+<<GetCharacter GameManager>>
+===

@@ -1,0 +1,26 @@
+﻿title: MothmanDialogueStart
+---
+<<declare $MothmanName = "<color=red>Mothman</color>">>
+<<declare $mothStanding = 0>>
+
+<<TogglePortraitAnim GameManager>>
+Here comes Mothman!
+{$MothmanName}: Hi I'm Mothman.
+-> Hi!!
+    <<set $mothStanding = $mothStanding + 1>>
+    <<SetPortraitSprite GameManager "Happy">>
+    {$MothmanName}: Yaaay!
+-> Actually, you are ugly.
+    <<set $mothStanding = $mothStanding - 1>>
+    <<SetPortraitSprite GameManager "Upset">>
+    {$MothmanName}: Rude...
+
+<<TogglePortraitAnim GameManager>>
+<<if $mothStanding < 0>>
+    That... could have gone better...
+<<else>>
+    <<SetLiked GameManager>>
+    That... went kind of well!
+<<endif>>
+<<GetCharacter GameManager>>
+===
