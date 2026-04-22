@@ -1,22 +1,22 @@
-﻿title: MothmanDialogueStart
+﻿title: WerewolfDialogueStart
 ---
-<<declare $MothmanName = "<color=red>Mothman</color>">>
-<<declare $mothStanding = 0>>
+<<declare $WolfName = "<color=#a52a2aff>Wolf</color>">>
+<<declare $WolfStanding = 0>>
 
 <<TogglePortraitAnim GameManager>>
-Here comes Mothman!
-{$MothmanName}: Hi I'm Mothman.
+Here comes a Werewolf!
+{$WolfName}: Hey I'm a Werewolf.
 -> Hi!!
-    <<set $mothStanding = $mothStanding + 1>>
+    <<set $WolfStanding = $WolfStanding + 1>>
     <<SetPortraitSprite GameManager "Happy">>
-    {$MothmanName}: Yaaay!
+    {$WolfName}: Yaaay!
 -> Actually, you are ugly.
-    <<set $mothStanding = $mothStanding - 1>>
+    <<set $WolfStanding = $WolfStanding - 1>>
     <<SetPortraitSprite GameManager "Upset">>
-    {$MothmanName}: Rude...
+    {$WolfName}: Rude...
 
 <<TogglePortraitAnim GameManager>>
-<<if $mothStanding < 0>>
+<<if $WolfStanding < 0>>
     That... could have gone better...
 <<else>>
     <<SetLiked GameManager>>

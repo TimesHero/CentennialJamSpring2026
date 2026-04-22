@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ca1029501d448247864f6cb6ccae4d1, type: 3}
-  m_Name: Death
+  m_Name: Cthulhu
   m_EditorClassIdentifier: Assembly-CSharp::Character
   minInterest: 0
   maxInterest: 0

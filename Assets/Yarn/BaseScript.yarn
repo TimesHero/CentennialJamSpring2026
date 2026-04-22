@@ -1,5 +1,28 @@
 ﻿title: GameOpening
 ---
-Narrator: This is the opening text! You're speed dating cryptids!
+This is the opening text! You're speed dating cryptids!
 <<GetCharacter GameManager>>
+===
+
+title: GameClosingGood
+---
+You talked to everyone!
+Looking back on the afternoon, you seemed to get along with some people.
+The question is... who do you want to ask out?
+-> Mothman was kinda hot <<if $mothStanding > 0>>
+    You ask mothman out and make out awesome style.
+-> Death seemed nice <<if $deathStanding > 0>>
+    You ask death out and make out awesome style.
+-> I have thoughts about that Werewolf... <<if $WolfStanding > 0>>
+    You ask the Werewolf out and make out awesome style.
+-> That tentacle guy makes me feel weird... <<if $CthulhuStanding > 0>>
+    You ask Cthulhu out and make out awesome style. (Which is awesome bc tentacles)
+THE END!
+===
+
+title: GameClosingBad
+---
+You talked to everyone!
+Looking back on the afternoon, you didn't really hit it off with anyone...
+Maybe try to be more likeable? idk man...
 ===
