@@ -1,0 +1,26 @@
+﻿title: WerewolfDialogueStart
+---
+<<declare $WolfName = "<color=#a52a2aff>Wolf</color>">>
+<<declare $WolfStanding = 0>>
+
+<<TogglePortraitAnim GameManager>>
+Here comes a Werewolf!
+{$WolfName}: Hey I'm a Werewolf.
+-> Hi!!
+    <<set $WolfStanding = $WolfStanding + 1>>
+    <<SetPortraitSprite GameManager "Happy">>
+    {$WolfName}: Yaaay!
+-> Actually, you are ugly.
+    <<set $WolfStanding = $WolfStanding - 1>>
+    <<SetPortraitSprite GameManager "Upset">>
+    {$WolfName}: Rude...
+
+<<TogglePortraitAnim GameManager>>
+<<if $WolfStanding < 0>>
+    That... could have gone better...
+<<else>>
+    <<SetLiked GameManager>>
+    That... went kind of well!
+<<endif>>
+<<GetCharacter GameManager>>
+===

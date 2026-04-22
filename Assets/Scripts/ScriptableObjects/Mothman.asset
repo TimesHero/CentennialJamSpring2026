@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ca1029501d448247864f6cb6ccae4d1, type: 3}
+  m_Name: Mothman
+  m_EditorClassIdentifier: Assembly-CSharp::Character
+  minInterest: 0
+  maxInterest: 0
+  neutralSprite: {fileID: 21300000, guid: d175e4021c0491d4ca607c529f1fce6d, type: 3}
+  happySprite: {fileID: 21300000, guid: 3f79f3b09368fe14fa9c5fea8b9d8fb8, type: 3}
+  upsetSprite: {fileID: 21300000, guid: 8ee9ebd41647505488293977394a4e78, type: 3}

@@ -1,0 +1,26 @@
+﻿title: DeathDialogueStart
+---
+<<declare $DeathName = "<color=grey>Death</color>">>
+<<declare $deathStanding = 0>>
+
+<<TogglePortraitAnim GameManager>>
+Here comes death!
+{$DeathName}: Hi I'm death.
+-> Hi!!
+    <<set $deathStanding = $deathStanding + 1>>
+    <<SetPortraitSprite GameManager "Happy">>
+    {$DeathName}: Yaaay!
+-> Actually, you are ugly.
+    <<set $deathStanding = $deathStanding - 1>>
+    <<SetPortraitSprite GameManager "Upset">>
+    {$DeathName}: Rude...
+
+<<TogglePortraitAnim GameManager>>
+<<if $deathStanding < 0>>
+    That... could have gone better...
+<<else>>
+    <<SetLiked GameManager>>
+    That... went kind of well!
+<<endif>>
+<<GetCharacter GameManager>>
+===
