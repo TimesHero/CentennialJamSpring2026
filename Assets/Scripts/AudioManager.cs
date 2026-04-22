@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class AudioManager : MonoBehaviour
+public class AudioManager : Singleton<AudioManager>
 {
     [Header("Audio Source")]
     [SerializeField] AudioSource musicSource;
@@ -12,7 +12,24 @@ public class AudioManager : MonoBehaviour
 
     [Header("SFX Audio Clips")]
     public AudioClip pauseSound;
+    public AudioClip buttonPress;
 
+    /*
+    public static AudioManager instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+    */
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
