@@ -10,6 +10,7 @@ public class MenuHandler : MonoBehaviour
      * primarily for switching scenes or bringing up UI elements like the pause screen.
      */
 
+    public GameObject MainPanel;
     public GameObject OptionsPanel;
     public GameObject InstructionsPanel;
 
@@ -35,12 +36,13 @@ public class MenuHandler : MonoBehaviour
 
     public void ToggleOptionsMenu()
     {
+        MainPanel.SetActive(OptionsPanel.active);
         OptionsPanel.SetActive(!OptionsPanel.active);
     }
     public void ToggleInstructionsPanel()
     {
+        MainPanel.SetActive(InstructionsPanel.active);
         InstructionsPanel.SetActive(!InstructionsPanel.active);
-
     }
 
 }
