@@ -3,29 +3,49 @@ using Yarn.Unity;
 using System.Collections.Generic;
 using System.Collections;
 
+[System.Serializable]
+public class characterKeyValue
+{
+    public string key;
+    public Character value;
+}
+
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private DialogueRunner dialogueRunner;
-    [SerializeField] private List<Character> characters;
+    [SerializeField] private CanvasGroup fadeCanvas;
+    [SerializeField] private List<characterKeyValue> characters; //List of key and value pairs, workaround to be able to make the dictionary from the inspector
+    Dictionary<string, Character> characterDict = new Dictionary<string, Character>();
+    private List<string> characterKeys = new List<string>(); //Used to grab random characters
+
     [SerializeField] private SpriteRenderer portrait;
     [SerializeField] private Animator animator;
     private bool someoneLikes = false;
     private Character pickedChar;
+    private Coroutine fadeRoutine;
 
+    void Awake()
+    {
+        foreach (characterKeyValue pair in characters)
+        {
+            characterDict.Add(pair.key, pair.value);
+            characterKeys.Add(pair.key);
+        }
+    }
 
-    [YarnCommand("GetCharacter")]
+    [YarnCommand("GetRandCharacter")]
     public void GetCharacter()
     {
-        if(characters.Count <= 0)
+        if(characterKeys.Count <= 0)
         {
             if(someoneLikes) StartCoroutine(StartDialogue("GameClosingGood"));
             else StartCoroutine(StartDialogue("GameClosingBad"));
         }
         else
         {
-            int charIndex = UnityEngine.Random.Range(0, characters.Count);
-            pickedChar = characters[charIndex];
-            characters.RemoveAt(charIndex);
+            int charIndex = Random.Range(0, characterKeys.Count);
+            pickedChar = characterDict[characterKeys[charIndex]];
+            characterKeys.RemoveAt(charIndex);
             StartCoroutine(StartDialogue(pickedChar));
             portrait.sprite = pickedChar.neutralSprite;
         }
@@ -60,5 +80,44 @@ public class GameManager : MonoBehaviour
     public void TogglePortraitAnim()
     {
         animator.SetBool("isVisible", !animator.GetBool("isVisible"));
+    }
+
+    [YarnCommand("GetCharacter")]
+    public void GetCharacter(string key)
+    {
+        try{pickedChar = characterDict[key];} catch (System.Exception){throw;}
+    }
+
+    [YarnCommand("FadeScreen")]
+    public void FadeScreen(bool fadeIn, float duration)
+    {
+        if(fadeRoutine != null) StopCoroutine(fadeRoutine);
+
+        if(fadeIn) fadeRoutine = StartCoroutine(FadeScreenIn(duration));
+        else fadeRoutine = StartCoroutine(FadeScreenOut(duration));
+    }
+
+    private IEnumerator FadeScreenIn(float duration)
+    {
+        float elapsed = 0;
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            fadeCanvas.alpha = Mathf.Lerp(1, 0, elapsed/duration);
+            yield return null;
+        }
+        fadeCanvas.alpha = 0;
+    }
+
+    private IEnumerator FadeScreenOut(float duration)
+    {
+        float elapsed = 0;
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            fadeCanvas.alpha = Mathf.Lerp(0, 1, elapsed/duration);
+            yield return null;
+        }
+        fadeCanvas.alpha = 1;
     }
 }

@@ -22,5 +22,28 @@ Here comes a Werewolf!
     <<SetLiked GameManager>>
     That... went kind of well!
 <<endif>>
-<<GetCharacter GameManager>>
+<<GetRandCharacter GameManager>>
+===
+
+title: WerewolfEnding
+---
+<<GetCharacter GameManager Werewolf>>
+<<SetPortraitSprite GameManager "Neutral">>
+
+You decide you're going to ask {$WolfName} out.
+You spot him a few tables away, looking around at the other tables.
+You wave your hand to grab his attention and call him over to yours.
+<<TogglePortraitAnim GameManager>>
+He timidly makes his way over and sits down, already blushing and looking away from you.
+{$WolfName}: Uhm. Y-You called me over?
+You ask {$WolfName} if he'd like to go on another date sometime.
+His eyes instantly lock onto you. He looks shocked.
+After giving you the most eye contact he's probably given anyone all day, his gaze darts back down to his lap.
+{$WolfName}: I- You really- You want... <b>me</b>?
+You tell him that you had a really nice time talking with him and that you'd like to get to know him better.
+As you speak, you can hear his tail audibly smacking against the back of his chair.
+<<SetPortraitSprite GameManager "Happy">>
+{$WolfName}: M-Me too! Gosh, I... I thought I made such a fool of myself.
+<<SetPortraitSprite GameManager "Neutral">>
+{$WolfName}: I was half expecting no one to talk to me after all that...
 ===

@@ -22,5 +22,14 @@ Here comes death!
     <<SetLiked GameManager>>
     That... went kind of well!
 <<endif>>
-<<GetCharacter GameManager>>
+<<GetRandCharacter GameManager>>
+===
+
+title: DeathEnding
+---
+<<GetCharacter GameManager Werewolf>>
+<<TogglePortraitAnim GameManager>>
+<<SetPortraitSprite GameManager "Happy">>
+
+You ask death out and make out awesome style.
 ===

@@ -3,11 +3,11 @@
   "sourceFiles": [
     "**/*.yarn"
   ],
-  "excludeFiles": [
-    "**/*~/*",
-    "./Samples/Yarn Spinner*/*"
-  ],
+  "excludeFiles": [],
   "localisation": {},
   "baseLanguage": "en",
+  "definitions": [
+    "..\\..\\ProjectSettings\\Packages\\dev.yarnspinner\\Assembly-CSharp-generated.ysls.json"
+  ],
   "compilerOptions": {}
 }

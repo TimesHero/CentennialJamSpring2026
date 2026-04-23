@@ -22,5 +22,14 @@ Here comes... I'm not sure who that is. Looks like Cthulhu though!
     <<SetLiked GameManager>>
     That... went kind of well!
 <<endif>>
-<<GetCharacter GameManager>>
+<<GetRandCharacter GameManager>>
+===
+
+title: CthulhuEnding
+---
+<<GetCharacter GameManager Mothman>>
+<<TogglePortraitAnim GameManager>>
+<<SetPortraitSprite GameManager "Happy">>
+
+You ask Cthulhu out and make out awesome style. (Which is awesome bc tentacles)
 ===

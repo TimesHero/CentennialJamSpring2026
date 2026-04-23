@@ -22,5 +22,14 @@ Here comes Mothman!
     <<SetLiked GameManager>>
     That... went kind of well!
 <<endif>>
-<<GetCharacter GameManager>>
+<<GetRandCharacter GameManager>>
+===
+
+title: MothmanEnding
+---
+<<GetCharacter GameManager Mothman>>
+<<TogglePortraitAnim GameManager>>
+<<SetPortraitSprite GameManager "Happy">>
+
+You ask Mothman out and make out awesome style.
 ===
