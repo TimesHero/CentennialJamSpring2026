@@ -104,7 +104,7 @@ public class PauseMenuHandler : MonoBehaviour
             //int buttonClickSoundsIndex = Random.Range(0, buttonClickSounds.Length); //.Length is exclusive, determines which sfx to play
             //if (audioSource != null) audioSource.PlayOneShot(buttonClickSounds[buttonClickSoundsIndex], 0.7F); //Plays a cool sfx
             //Debug.Log("Click");
-            if (audioManager != null) audioManager.PlaySFXRandomPitch(audioManager.pauseSound);
+            //if (audioManager != null) audioManager.PlaySFXRandomPitch(audioManager.pauseSound);
 
             //Pausing
             paused = true; //tells this script the game is paused
@@ -119,7 +119,7 @@ public class PauseMenuHandler : MonoBehaviour
     {
         if (paused == true) {
             //Click SFX (Handled by ButtonPress)
-            if (audioManager != null) audioManager.PlaySFXRandomPitch(audioManager.pauseSound);
+            //if (audioManager != null) audioManager.PlaySFXRandomPitch(audioManager.pauseSound);
 
             //Resuming
             Time.timeScale = 1f; //resumes time
