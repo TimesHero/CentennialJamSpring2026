@@ -420,6 +420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ea46c2be66cccf40806c8dcfe5828d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuHandler
+  MainPanel: {fileID: 0}
   OptionsPanel: {fileID: 1978367274}
   InstructionsPanel: {fileID: 1394837774}
 --- !u!4 &185692452
@@ -2087,6 +2088,7 @@ GameObject:
   - component: {fileID: 1205438193}
   - component: {fileID: 1205438192}
   - component: {fileID: 1205438191}
+  - component: {fileID: 1205438195}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2180,6 +2182,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1205438195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205438190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7317a2735e0da0a4382a7439a7b45ab8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VolumeSettings
+  myMixer: {fileID: 24100000, guid: d264c7dcaef0f1b49983918e2d2ca827, type: 2}
+  masterSlider: {fileID: 0}
+  musicSlider: {fileID: 0}
+  SFXSlider: {fileID: 0}
 --- !u!1 &1278056229
 GameObject:
   m_ObjectHideFlags: 0
@@ -2423,6 +2441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff9ac5109d5e2a7418ec21b5b79a7647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseMenuHandler
+  audioManager: {fileID: 0}
   buttonClickSounds: []
   audioSource: {fileID: 0}
   paused: 0

@@ -1,28 +1,45 @@
 ﻿title: GameOpening
 ---
-This is the opening text! You're speed dating cryptids!
-<<GetCharacter GameManager>>
+Hi story, you're lonely, most forms of dating have NOT worked out for you
+Poor little gender ambiguous you.
+In your deep sadness, you spot a flyer for a speed dating event.
+Without really looking at the details, you mark down the date and place.
+<<FadeScreen GameManager true 2>>
+And thats how you found yourself here. In a cafe, filled with creatures of all sorts.
+Put Jacks talk here idk.
+<<GetRandCharacter GameManager>>
 ===
 
 title: GameClosingGood
 ---
 You talked to everyone!
-Looking back on the afternoon, you seemed to get along with some people.
-The question is... who do you want to ask out?
--> Mothman was kinda hot <<if $mothStanding > 0>>
-    You ask mothman out and make out awesome style.
+Looking back on the afternoon, you actually didn't do half bad!
+Some of the people actually seemed to be interested. This might be your chance!
+The question is... <b>who do you want to ask out?</b>
+-> That moth was kinda cute... <<if $mothStanding > 0>>
+    <<jump MothmanEnding>>
 -> Death seemed nice <<if $deathStanding > 0>>
-    You ask death out and make out awesome style.
+    <<jump DeathEnding>>
 -> I have thoughts about that Werewolf... <<if $WolfStanding > 0>>
-    You ask the Werewolf out and make out awesome style.
+    <<jump WerewolfEnding>>
 -> That tentacle guy makes me feel weird... <<if $CthulhuStanding > 0>>
-    You ask Cthulhu out and make out awesome style. (Which is awesome bc tentacles)
+    <<jump CthulhuEnding>>
 THE END!
 ===
 
 title: GameClosingBad
 ---
 You talked to everyone!
-Looking back on the afternoon, you didn't really hit it off with anyone...
-Maybe try to be more likeable? idk man...
+Looking back on the afternoon, you... didn't really hit it off with anyone...
+Actually, You pissed a few of them off more than anything.
+Maybe you're just not cut out for dating... It's a harsh reality bu-
+<<FadeScreen GameManager false 5>>
+Wait... Why is everyone looking at you like that..?
+They all look so angry. Their peircing stares dig into you.
+After glancing at each other, they each get up from their chairs.
+They all walk towards you. Teeth bared, claws out.
+As they finally reach your table, multiple of them reach out towards you.
+<color=red>You feel like you probably shouldn't have come here...</color>
+<color=red>THE END!</color>
 ===
+

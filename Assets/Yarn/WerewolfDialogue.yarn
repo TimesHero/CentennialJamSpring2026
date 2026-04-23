@@ -1,26 +1,127 @@
 ﻿title: WerewolfDialogueStart
 ---
-<<declare $WolfName = "<color=#a52a2aff>Wolf</color>">>
+<<declare $WolfName = "<color=blue>Lucian</color>">>
 <<declare $WolfStanding = 0>>
 
 <<TogglePortraitAnim GameManager>>
-Here comes a Werewolf!
-{$WolfName}: Hey I'm a Werewolf.
--> Hi!!
-    <<set $WolfStanding = $WolfStanding + 1>>
-    <<SetPortraitSprite GameManager "Happy">>
-    {$WolfName}: Yaaay!
--> Actually, you are ugly.
-    <<set $WolfStanding = $WolfStanding - 1>>
-    <<SetPortraitSprite GameManager "Upset">>
-    {$WolfName}: Rude...
+You watch as a mess of grey hair approaches your table timidly. He looks almost like he is contemplating bolting.
+You give him a small wave, inviting him to sit, which he immediately does.
+{$WolfName}: Uhm... H-hi! My name is L-Lucian. 
+You can see a bushy tail swaying nervously behind his chair as you introduce yourself. A faint red tints Lucian’s cheeks. 
+{$WolfName}: It... n-nice to meet you!
+A chime rings to signify the start of the questions section.
+<<detour Werewolf1>>
+<<SetPortraitSprite GameManager "Neutral">>
+<<detour Werewolf2>>
+<<SetPortraitSprite GameManager "Neutral">>
+<<detour Werewolf3>>
 
-<<TogglePortraitAnim GameManager>>
+<<SetPortraitSprite GameManager "Neutral">>
 <<if $WolfStanding < 0>>
-    That... could have gone better...
+    Suddenly, two chimes ring out, signifying the end of this round.
+    <<SetPortraitSprite GameManager "Upset">>
+    {$WolfName}: <size=30>...Finally.</size>
+    {$WolfName}: U-Uh... I...
+    <<TogglePortraitAnim GameManager>>
+    Without another word, {$WolfName} gets up and quickly walks away to stand off to the side of the room.
+    That... could have gone a lot better...
 <<else>>
     <<SetLiked GameManager>>
+    Suddenly, two chimes ring out, signifying the end of this round.
+    {$WolfName}'s ears perk up.
+    {$WolfName}: O-Oh! I... guess thats it then.
+    <<SetPortraitSprite GameManager "Happy">>
+    {$WolfName}: I-It... was really nice to meet you!
+    <<TogglePortraitAnim GameManager>>
+    Before you can even get a word in, {$WolfName} gets up and quickly walks away to stand off to the side of the room, blushing.
     That... went kind of well!
 <<endif>>
-<<GetCharacter GameManager>>
+<<GetRandCharacter GameManager>>
+===
+
+title: Werewolf1
+---
+-> Your fur looks really soft! It suits you!
+    <<set $WolfStanding = $WolfStanding + 1>>
+    <<SetPortraitSprite GameManager "Happy">>
+    {$WolfName}: Thank you! I made sure to brush it out <i>especially</i> for today.
+    <<SetPortraitSprite GameManager "Neutral">>
+    {$WolfName}: It... tends to get messy easily.
+-> Are you housebroken?
+    <<set $WolfStanding = $WolfStanding - 1>>
+    <<SetPortraitSprite GameManager "Upset">>
+    {$WolfName}: I... what? That's- yes, <i>obviously-</i>
+    {$WolfName}: Why would you say that..?
+-> Werewolf huh? I heard werewolves are great with knots~
+    <<set $WolfStanding = $WolfStanding - 1>>
+    <<SetPortraitSprite GameManager "Neutral">>
+    {$WolfName}: Huh? I don't...
+    <<wait 1>>
+    {$WolfName}: Oh- OH!
+    <<SetPortraitSprite GameManager "Upset">>
+    {$WolfName}: I... I don't- You... <size=30>what..?</size>
+===
+
+title: Werewolf2
+---
+-> You seem like you'd be high maintenance. A friend of mine has this poodle and let's just say it's a <i>lot.</i>
+    <<set $WolfStanding = $WolfStanding - 1>>
+    <<SetPortraitSprite GameManager "Upset">>
+    {$WolfName}: Huh? I don't- I'm not- I just need some patience... sometimes, that's not-
+    {$WolfName}: J-Just... <size=30>nevermind...</size>
+-> If I scratched behind your ears would you be mine forever?
+    <<set $WolfStanding = $WolfStanding + 1>>
+    <<SetPortraitSprite GameManager "Upset">>
+    {$WolfName}: ...
+    {$WolfName}: ...P-Please don't...
+    <<SetPortraitSprite GameManager "Happy">>
+    {$WolfName}: I... don't know if I could handle it.
+-> Have you always lived around here?
+    <<set $WolfStanding = $WolfStanding + 1>>
+    <<SetPortraitSprite GameManager "Happy">>
+    {$WolfName}: Most of my life, yeah. I like knowing my territory-
+    <<SetPortraitSprite GameManager "Upset">>
+    {$WolfName}: I MEAN AREA! My area! Knowing... the area. <i>ahem...</i>
+===
+
+title: Werewolf3
+---
+-> I'd run through the woods with you any night.
+    <<set $WolfStanding = $WolfStanding + 1>>
+    {$WolfName}: Th-that's actually kind of-
+    <<SetPortraitSprite GameManager "Happy">>
+    {$WolfName}: I would... maybe like that.
+-> I’d let you bite me if it means we could be mates~
+    <<SetPortraitSprite GameManager "Upset">>
+    {$WolfName}: I- Uh- I mean thats n-not-... 
+    {$WolfName}: W-Why don’t we just... take it slow...?
+-> Do you shed? I don't like dogs that shed.
+    <<set $WolfStanding = $WolfStanding - 1>>
+    <<SetPortraitSprite GameManager "Upset">>
+    {$WolfName}: Wha- I don't shed! Why would you-
+    {$WolfName}: ...I don't shed <i>much</i>...
+    {$WolfName}: Whatever...
+===
+
+title: WerewolfEnding
+---
+<<GetCharacter GameManager Werewolf>>
+<<SetPortraitSprite GameManager "Neutral">>
+
+You decide you're going to ask {$WolfName} out.
+You spot him a few tables away, looking around at the other tables.
+You wave your hand to grab his attention and call him over to yours.
+<<TogglePortraitAnim GameManager>>
+He timidly makes his way over and sits down, already blushing and looking away from you.
+{$WolfName}: Uhm. Y-You called me over?
+You ask {$WolfName} if he'd like to go on another date sometime.
+His eyes instantly lock onto you. He looks shocked.
+After giving you the most eye contact he's probably given anyone all day, his gaze darts back down to his lap.
+{$WolfName}: I- You really- You want... <b>me</b>?
+You tell him that you had a really nice time talking with him and that you'd like to get to know him better.
+As you speak, you can hear his tail audibly smacking against the back of his chair.
+<<SetPortraitSprite GameManager "Happy">>
+{$WolfName}: M-Me too! Gosh, I... I thought I made such a fool of myself.
+<<SetPortraitSprite GameManager "Neutral">>
+{$WolfName}: I was half expecting no one to talk to me after all this...
 ===
