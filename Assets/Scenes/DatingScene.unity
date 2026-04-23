@@ -1056,8 +1056,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.1037598, y: -0.4486084}
-  m_SizeDelta: {x: -38.31372, y: -28.852295}
+  m_AnchoredPosition: {x: -2.5996704, y: -1.1964722}
+  m_SizeDelta: {x: -74.2097, y: -63.2523}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &244878067
 MonoBehaviour:
@@ -1704,10 +1704,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.31354168
+    x: 0
     y: 0
-    width: 0.40740743
-    height: 0.4074074
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -2131,7 +2131,6 @@ GameObject:
   - component: {fileID: 624276553}
   - component: {fileID: 624276552}
   - component: {fileID: 624276551}
-  - component: {fileID: 624276554}
   m_Layer: 5
   m_Name: PauseButton
   m_TagString: Untagged
@@ -2253,20 +2252,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 624276549}
   m_CullTransparentMesh: 1
---- !u!114 &624276554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 624276549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edc12b99e259f064f99de3178d218df5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ButtonPress
-  yourButton: {fileID: 0}
-  AudioManager: {fileID: 0}
 --- !u!1 &709129112
 GameObject:
   m_ObjectHideFlags: 0
@@ -2985,7 +2970,6 @@ GameObject:
   - component: {fileID: 873559915}
   - component: {fileID: 873559914}
   - component: {fileID: 873559913}
-  - component: {fileID: 873559916}
   m_Layer: 5
   m_Name: ResumeButton
   m_TagString: Untagged
@@ -3066,7 +3050,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Gameplay
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &873559914
@@ -3107,20 +3091,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 873559911}
   m_CullTransparentMesh: 1
---- !u!114 &873559916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 873559911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edc12b99e259f064f99de3178d218df5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ButtonPress
-  yourButton: {fileID: 0}
-  AudioManager: {fileID: 0}
 --- !u!1 &937551269
 GameObject:
   m_ObjectHideFlags: 0
@@ -4613,7 +4583,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1521419507
 MonoBehaviour:
   m_ObjectHideFlags: 0
