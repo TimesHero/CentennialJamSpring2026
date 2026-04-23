@@ -1,19 +1,17 @@
 ﻿title: CthulhuDialogueStart
 ---
-<<declare $CthulhuName = "<color=green>Cthulhu</color>">>
+<<declare $CthulhuName = "<color=green>Thalor</color>">>
 <<declare $CthulhuStanding = 0>>
 
 <<TogglePortraitAnim GameManager>>
-Here comes... I'm not sure who that is. Looks like Cthulhu though!
-{$CthulhuName}: Greetings.
--> Hi!!
-    <<set $CthulhuStanding = $CthulhuStanding + 1>>
-    <<SetPortraitSprite GameManager "Happy">>
-    {$CthulhuName}: Yaaay!
--> Actually, you are ugly.
-    <<set $CthulhuStanding = $CthulhuStanding - 1>>
-    <<SetPortraitSprite GameManager "Upset">>
-    {$CthulhuName}: Rude...
+Before you have a chance to look around the room, a handsome man seats himself at your table.
+He looks at you with an air of refinement despite his loose sea-bound clothing.
+Looking at him almost makes your head hurt. Something about him...
+{$CthulhuName}: Greetings. I am known by many names, The Great Dreamer, The Sleeper of R'lyeh, The High Priest of the Great Old Ones, Cthulhu. 
+{$CthulhuName}: <b>You</b> may call me Thalor.
+Introducing yourself, you shake his hand, his grip firm... albeit a bit damp. 
+A chime rings to signify the start of the questions section. 
+<<jump Cthulhu1>>
 
 <<TogglePortraitAnim GameManager>>
 <<if $CthulhuStanding < 0>>
@@ -25,9 +23,43 @@ Here comes... I'm not sure who that is. Looks like Cthulhu though!
 <<GetRandCharacter GameManager>>
 ===
 
+title: Cthulhu1
+---
+-> I thought you’d be taller.
+    <<set $CthulhuStanding = $CthulhuStanding - 1>>
+    {$CthulhuName}: And I thought mortals had outgrown such pedestrian observations. We are both disappointed.
+-> Are those tentacles just for show or do they got any tricks~?
+    <<set $CthulhuStanding = $CthulhuStanding + 1>>
+    {$CthulhuName}: They are precision instruments. 
+    <<SetPortraitSprite GameManager "Happy">>
+    {$CthulhuName}: Whether they perform for you depends entirely on how the rest of this evening proceeds.
+-> You look quite lovely.
+    <<set $CthulhuStanding = $CthulhuStanding + 1>>
+    {$CthulhuName}: A functional observation. You present adequately as well.
+    <<wait 1>>
+    {$CthulhuName}: ...That was intended as a compliment.
+===
+
+title: Cthulhu2
+---
+-> So how old are you actually?
+    <<set $CthulhuStanding = $CthulhuStanding - 1>>
+    {$CthulhuName}: Older than the mortals of this land can comprehend.
+-> I'd sacrifice myself on an altar for you any day.
+    <<set $CthulhuStanding = $CthulhuStanding + 1>>
+    {$CthulhuName}: You are either deeply committed or deeply unwell.
+    {$CthulhuName}: ...I have not yet decided which.
+-> What are you looking for in a partner?
+    {$CthulhuName}: Competence. Focus. The ability to hold a conversation without going catatonic. 
+    {$CthulhuName}:The bar is... frankly low.
+    <<wait 1>>
+    {$CthulhuName}: ...That was intended as a compliment.
+===
+
+
 title: CthulhuEnding
 ---
-<<GetCharacter GameManager Mothman>>
+<<GetCharacter GameManager Cthulhu>>
 <<TogglePortraitAnim GameManager>>
 <<SetPortraitSprite GameManager "Happy">>
 
