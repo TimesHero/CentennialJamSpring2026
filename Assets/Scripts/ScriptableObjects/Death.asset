@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ca1029501d448247864f6cb6ccae4d1, type: 3}
   m_Name: Death
   m_EditorClassIdentifier: Assembly-CSharp::Character
-  minInterest: 0
-  maxInterest: 0
-  neutralSprite: {fileID: 21300000, guid: d175e4021c0491d4ca607c529f1fce6d, type: 3}
-  happySprite: {fileID: 21300000, guid: 3f79f3b09368fe14fa9c5fea8b9d8fb8, type: 3}
-  upsetSprite: {fileID: 21300000, guid: 8ee9ebd41647505488293977394a4e78, type: 3}
+  neutralSprite: {fileID: 21300000, guid: f433981231e324843b28bc9de731c76b, type: 3}
+  happySprite: {fileID: 21300000, guid: 5ef01187c0703694e94d41e0ec15dd2b, type: 3}
+  upsetSprite: {fileID: 21300000, guid: 021f6a3f6df085045a66892176a7e29d, type: 3}

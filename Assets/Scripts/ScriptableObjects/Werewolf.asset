@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ca1029501d448247864f6cb6ccae4d1, type: 3}
   m_Name: Werewolf
   m_EditorClassIdentifier: Assembly-CSharp::Character
-  minInterest: 0
-  maxInterest: 0
-  neutralSprite: {fileID: 21300000, guid: d175e4021c0491d4ca607c529f1fce6d, type: 3}
-  happySprite: {fileID: 21300000, guid: 3f79f3b09368fe14fa9c5fea8b9d8fb8, type: 3}
-  upsetSprite: {fileID: 21300000, guid: 8ee9ebd41647505488293977394a4e78, type: 3}
+  neutralSprite: {fileID: 21300000, guid: 7f1d2324ee129f940840820644d9a004, type: 3}
+  happySprite: {fileID: 21300000, guid: be2674b0b412e9a4b8ab140d801fdaba, type: 3}
+  upsetSprite: {fileID: 21300000, guid: a8a3a7e97c3400d4bb98b0a2bafe7f1b, type: 3}
