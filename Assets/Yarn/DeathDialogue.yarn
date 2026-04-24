@@ -1,6 +1,6 @@
 ﻿title: DeathDialogueStart
 ---
-<<declare $DeathName = "<color=grey>Maveth</color>">>
+<<declare $DeathName = "Maveth">>
 <<declare $deathStanding = 0>>
 
 You suddenly feel a chill in the air. You are surrounded by a cold aura.
@@ -121,7 +121,7 @@ After a moment of hesitation, you get up and follow {$DeathName}.
 THE END!
 <<wait 3>>
 
-As you walk with {?DeathName}, you eye his hand. You debate grabbing it.
+As you walk with {$DeathName}, you eye his hand. You debate grabbing it.
 He wouldn't even shake your hand earlier...
 Whats the worst that could happen? You reach for his hand and grab it.
 Suddenly, you feel a cold chill, colder than the aura eminating around him.
