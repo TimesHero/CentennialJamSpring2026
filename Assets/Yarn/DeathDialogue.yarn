@@ -1,6 +1,6 @@
 ﻿title: DeathDialogueStart
 ---
-<<declare $DeathName = "Maveth">>
+<<declare $DeathName = "<color=grey>Maveth</color>">>
 <<declare $deathStanding = 0>>
 
 You suddenly feel a chill in the air. You are surrounded by a cold aura.
