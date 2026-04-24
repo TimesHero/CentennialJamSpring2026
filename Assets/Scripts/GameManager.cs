@@ -15,6 +15,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private DialogueRunner dialogueRunner;
     [SerializeField] private CanvasGroup fadeCanvas;
     [SerializeField] private List<characterKeyValue> characters; //List of key and value pairs, workaround to be able to make the dictionary from the inspector
+    
+    [Header("Audio Things")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip bellClip; 
+
+    [Header("Character Things")]
     Dictionary<string, Character> characterDict = new Dictionary<string, Character>();
     private List<string> characterKeys = new List<string>(); //Used to grab random characters
 
@@ -97,6 +103,7 @@ public class GameManager : MonoBehaviour
         else fadeRoutine = StartCoroutine(FadeScreenOut(duration));
     }
 
+
     private IEnumerator FadeScreenIn(float duration)
     {
         float elapsed = 0;
@@ -119,5 +126,16 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
         fadeCanvas.alpha = 1;
+    }
+
+    [YarnCommand("PlayBellDouble")]
+    public IEnumerator PlayBellDouble()
+    {
+        if(audioSource != null && bellClip != null)
+        {
+            audioSource.PlayOneShot(bellClip);
+            yield return new WaitForSeconds(0.2f);
+            audioSource.PlayOneShot(bellClip);
+        }
     }
 }

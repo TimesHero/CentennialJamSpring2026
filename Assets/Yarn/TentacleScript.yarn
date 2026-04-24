@@ -19,6 +19,7 @@ A chime rings to signify the start of the questions section.
 
 <<SetPortraitSprite GameManager "Neutral">>
 <<if $CthulhuStanding < 0>>
+    <<PlayBellDouble GameManager>>
     Suddenly, two chimes ring out, signifying the end of this round.
     {$CthulhuName}: Seems time is up. I had thought you'd be more interesting...
     {$CthulhuName}: I do not regret coming over, though. Thats the point of this event, is it not?
@@ -27,6 +28,7 @@ A chime rings to signify the start of the questions section.
     That... could have gone a lot better...
 <<else>>
     <<SetLiked GameManager>>
+    <<PlayBellDouble GameManager>>
     Suddenly, two chimes ring out, signifying the end of this round.
     {$CthulhuName}: Seems time is up.
     He seems to think for a moment.

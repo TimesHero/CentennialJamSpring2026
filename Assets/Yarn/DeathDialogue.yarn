@@ -21,6 +21,7 @@ A chime rings to signify the start of the questions section.
 
 <<SetPortraitSprite GameManager "Neutral">>
 <<if $deathStanding < 0>>
+    <<PlayBellDouble GameManager>>
     Suddenly, two chimes ring out, signifying the end of this round.
     {$DeathName}: Oh! There goes the bell.
     He stands up swiftly.
@@ -33,6 +34,7 @@ A chime rings to signify the start of the questions section.
     That... could have gone a lot better... and you feel a lot more mortal now...
 <<else>>
     <<SetLiked GameManager>>
+    <<PlayBellDouble GameManager>>
     Suddenly, two chimes ring out, signifying the end of this round.
     {$DeathName}: Oh! There goes the bell.
     He stands up swiftly.

@@ -18,6 +18,7 @@ A chime rings to signify the start of the questions section.
 
 <<SetPortraitSprite GameManager "Neutral">>
 <<if $WolfStanding < 0>>
+    <<PlayBellDouble GameManager>>
     Suddenly, two chimes ring out, signifying the end of this round.
     <<SetPortraitSprite GameManager "Upset">>
     {$WolfName}: <size=30>...Finally.</size>
@@ -27,6 +28,7 @@ A chime rings to signify the start of the questions section.
     That... could have gone a lot better...
 <<else>>
     <<SetLiked GameManager>>
+    <<PlayBellDouble GameManager>>
     Suddenly, two chimes ring out, signifying the end of this round.
     {$WolfName}'s ears perk up.
     {$WolfName}: O-Oh! I... guess thats it then.
