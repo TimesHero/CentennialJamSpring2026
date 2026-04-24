@@ -124,4 +124,12 @@ As you speak, you can hear his tail audibly smacking against the back of his cha
 {$WolfName}: M-Me too! Gosh, I... I thought I made such a fool of myself.
 <<SetPortraitSprite GameManager "Neutral">>
 {$WolfName}: I was half expecting no one to talk to me after all this...
+You smile as {$WolfName} fidgets with their tail. 
+You ask if maybe next time he’d like to go on a hike. He immediately perks up.
+<<SetPortraitSprite GameManager "Happy">>
+{$WolfName}: Yes!! I would love to!
+<<FadeScreen GameManager false 2>>
+<<TogglePortraitAnim GameManager>>
+You leave happily alongside {$WolfName} as he excitedly shares the different hiking paths he knows.
+THE END!
 ===
