@@ -1,12 +1,13 @@
 ﻿title: GameOpening
 ---
-Hi story, you're lonely, most forms of dating have NOT worked out for you
+You find yourself walking home from yet another botched date...
+You're lonely and most forms of dating have <b>NOT</b> worked out for you.
 Poor little gender ambiguous you.
-In your deep sadness, you spot a flyer for a speed dating event.
-Without really looking at the details, you mark down the date and place.
+On your sad, sad walk home, you spot a flyer for a speed dating event.
+Without really looking at the details, not that you care much, you mark down the date and place.
 <<FadeScreen GameManager true 2>>
 And thats how you found yourself here. In a cafe, filled with creatures of all sorts.
-Put Jacks talk here idk.
+Its... weird, but at this point you're willing to try anything.
 <<GetRandCharacter GameManager>>
 ===
 

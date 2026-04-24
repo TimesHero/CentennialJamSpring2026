@@ -1,35 +1,134 @@
 ﻿title: DeathDialogueStart
 ---
-<<declare $DeathName = "<color=grey>Death</color>">>
+<<declare $DeathName = "<color=grey>Maveth</color>">>
 <<declare $deathStanding = 0>>
 
-<<TogglePortraitAnim GameManager>>
-Here comes death!
-{$DeathName}: Hi I'm death.
--> Hi!!
-    <<set $deathStanding = $deathStanding + 1>>
-    <<SetPortraitSprite GameManager "Happy">>
-    {$DeathName}: Yaaay!
--> Actually, you are ugly.
-    <<set $deathStanding = $deathStanding - 1>>
-    <<SetPortraitSprite GameManager "Upset">>
-    {$DeathName}: Rude...
+You suddenly feel a chill in the air. You are surrounded by a cold aura.
+A moment later a figure slowly walks from your side around the table and takes a seat.
+Their all black clothes almost seem to writhe with darkness made living. The confidence they carry is somehow both alluring and terrifying. 
+Your heart races slightly as they take their seat. Almost like it knows the danger that has approached. 
+Somehow... this person feels like <color=grey>death incarnate</color>
+{$DeathName}: A fine evening for a chat. I go by Maveth, for tonight at least.
+You reach out your hand out, surprised its not shaking. Maveth looks from your hand to you before letting out a chilling laugh.
+{$DeathName}: You’re quite brave, for a mortal.
+A chime rings to signify the start of the questions section. 
+<<detour Death1>>
+<<SetPortraitSprite GameManager "Neutral">>
+<<detour Death2>>
+<<SetPortraitSprite GameManager "Neutral">>
+<<detour Death3>>
 
-<<TogglePortraitAnim GameManager>>
+<<SetPortraitSprite GameManager "Neutral">>
 <<if $deathStanding < 0>>
-    That... could have gone better...
+    Suddenly, two chimes ring out, signifying the end of this round.
+    {$DeathName}: Oh! There goes the bell.
+    He stands up swiftly.
+    {$DeathName}: I don't think this would work out, honestly.
+    {$DeathName}: But, as a parting gift...
+    <<SetPortraitSprite GameManager "Happy">>
+    {$DeathName}: November 27, 2067
+    <<TogglePortraitAnim GameManager>>
+    He leaves and walks away, taking his cold aura with him.
+    That... could have gone a lot better... and you feel a lot more mortal now...
 <<else>>
     <<SetLiked GameManager>>
+    Suddenly, two chimes ring out, signifying the end of this round.
+    {$DeathName}: Oh! There goes the bell.
+    He stands up swiftly.
+    <<SetPortraitSprite GameManager "Happy">>
+    {$DeathName}: Honestly, thats the most interested I've been during one of these!
+    {$DeathName}: I can tell you still might want to think about it, but don't worry...
+    {$DeathName}: ...I'll know when you decide.
+    <<TogglePortraitAnim GameManager>>
+    He leaves and walks away, taking his cold aura with him.
     That... went kind of well!
 <<endif>>
 <<GetRandCharacter GameManager>>
 ===
 
+title: Death1
+---
+-> Are you a necromancer? Because I feel something stiff rising from the dead
+    <<set $deathStanding = $deathStanding + 1>>
+    <<SetPortraitSprite GameManager "Happy">>
+    {$DeathName}: I need not the mortal magics for that, my dear. 
+-> What do you do for fun?
+    <<set $deathStanding = $deathStanding + 1>>
+    {$DeathName}: I collect things. Art. Estates. Interesting people.
+    <<SetPortraitSprite GameManager "Happy">>
+    {$DeathName}: You are the first in some time to hold my attention past introductions.
+-> You don’t seem like you eat much…
+    <<set $deathStanding = $deathStanding - 1>>
+    <<SetPortraitSprite GameManager "Upset">>
+    {$DeathName}: First off, quite rude...
+    <<SetPortraitSprite GameManager "Neutral">>
+    {$DeathName}: Second off, I need not eat. I have no stomach in which to hold food. 
+===
+
+title: Death2
+---
+-> You look like you've never had fun in your life.
+    <<set $deathStanding = $deathStanding - 1>>
+    <<SetPortraitSprite GameManager "Neutral">>
+    {$DeathName}: I've never <i>had</i> a life. And yet somehow I seem to be having more fun than you right now.
+-> Do you travel a lot?
+    <<set $deathStanding = $deathStanding + 1>>
+    {$DeathName}: I am everywhere death is. Which is, shockingly, everywhere. So to answer your question, yes. Constantly.
+    <<SetPortraitSprite GameManager "Happy">>
+    {$DeathName}: If tonight goes well, I wouldn't mind taking you along.
+-> I'd let you reap me any time.
+    <<set $deathStanding = $deathStanding + 1>>
+    <<SetPortraitSprite GameManager "Upset">>
+    {$DeathName}: The innuendo is transparent and beneath you...
+    He takes a long sip from his drink.
+    <<SetPortraitSprite GameManager "Neutral">>
+    {$DeathName}: It was also mildly amusing. Don't push it.
+===
+
+title: Death3
+---
+-> You carry yourself like someone used to getting what they want.
+    <<set $deathStanding = $deathStanding + 1>>
+    {$DeathName}: Because I am. Death waits for no one.
+    <<SetPortraitSprite GameManager "Happy">>
+    {$DeathName}: Though I am making an exception this evening.
+-> I want to know what Death feels like. Personally.
+    <<set $deathStanding = $deathStanding + 1>>
+    {$DeathName}: Most who say that are far less composed when it actually arrives.
+    <<SetPortraitSprite GameManager "Happy">>
+    {$DeathName}: <i>You, however, might be the exception.</i>
+-> I expected death to be more intimidating.
+    <<set $deathStanding = $deathStanding - 1>>
+    {$DeathName}: I felt your blood go ice cold when I first walked up.
+    {$DeathName}: Theres no need to lie now...
+===
+
 title: DeathEnding
 ---
-<<GetCharacter GameManager Werewolf>>
+<<GetCharacter GameManager Death>>
+<<SetPortraitSprite GameManager "Neutral">>
+You decide you're going to ask {$DeathName} out.
+Immediately after you decide, you feel another cold chill.
 <<TogglePortraitAnim GameManager>>
-<<SetPortraitSprite GameManager "Happy">>
+As expected, {$DeathName} walks up to your table from behind.
+{$DeathName}: Good choice! My answer is yes.
+You look at him, confused. You hadn't even asked yet.
+{$DeathName}: I told you... I'd know when you decided.
+<<TogglePortraitAnim GameManager>>
+{$DeathName}: Now come on, we have a eternity together~
+<<FadeScreen GameManager false 2>>
+After a moment of hesitation, you get up and follow {$DeathName}.
+THE END!
+<<wait 3>>
 
-You ask death out and make out awesome style.
+As you walk with {?DeathName}, you eye his hand. You debate grabbing it.
+He wouldn't even shake your hand earlier...
+Whats the worst that could happen? You reach for his hand and grab it.
+Suddenly, you feel a cold chill, colder than the aura eminating around him.
+You look up at him. He looks sad, but like he was half expecting this.
+Your vison blurs, you start to lose your balance.
+{$DeathName}: ...
+{$DeathName}: Well... there's always next year, I suppose...
+He lets go of your hand and you drop to the floor, and it all fades to black...
+THE END!
 ===

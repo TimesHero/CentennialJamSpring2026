@@ -11,13 +11,28 @@ Looking at him almost makes your head hurt. Something about him...
 {$CthulhuName}: <b>You</b> may call me Thalor.
 Introducing yourself, you shake his hand, his grip firm... albeit a bit damp. 
 A chime rings to signify the start of the questions section. 
-<<jump Cthulhu1>>
+<<detour Cthulhu1>>
+<<SetPortraitSprite GameManager "Neutral">>
+<<detour Cthulhu2>>
+<<SetPortraitSprite GameManager "Neutral">>
+<<detour Cthulhu3>>
 
-<<TogglePortraitAnim GameManager>>
+<<SetPortraitSprite GameManager "Neutral">>
 <<if $CthulhuStanding < 0>>
-    That... could have gone better...
+    Suddenly, two chimes ring out, signifying the end of this round.
+    {$CthulhuName}: Seems time is up. I had thought you'd be more interesting...
+    {$CthulhuName}: I do not regret coming over, though. Thats the point of this event, is it not?
+    <<TogglePortraitAnim GameManager>>
+    With that, {$CthulhuName} gets up and heads off to find another table.
+    That... could have gone a lot better...
 <<else>>
     <<SetLiked GameManager>>
+    Suddenly, two chimes ring out, signifying the end of this round.
+    {$CthulhuName}: Seems time is up.
+    He seems to think for a moment.
+    {$CthulhuName}: I came up to your table thinking you were interesting looking. I'm glad I wasn't wrong.
+    <<TogglePortraitAnim GameManager>>
+    You're honestly a little surprised. He nods before getting up and heading off to find another table.
     That... went kind of well!
 <<endif>>
 <<GetRandCharacter GameManager>>
@@ -25,7 +40,7 @@ A chime rings to signify the start of the questions section.
 
 title: Cthulhu1
 ---
--> I thought you’d be taller.
+-> I thought you’d be taller...
     <<set $CthulhuStanding = $CthulhuStanding - 1>>
     {$CthulhuName}: And I thought mortals had outgrown such pedestrian observations. We are both disappointed.
 -> Are those tentacles just for show or do they got any tricks~?
@@ -51,17 +66,44 @@ title: Cthulhu2
     {$CthulhuName}: ...I have not yet decided which.
 -> What are you looking for in a partner?
     {$CthulhuName}: Competence. Focus. The ability to hold a conversation without going catatonic. 
-    {$CthulhuName}:The bar is... frankly low.
-    <<wait 1>>
-    {$CthulhuName}: ...That was intended as a compliment.
+    {$CthulhuName}: The bar is... frankly low.
+===
+
+title: Cthulhu3
+---
+-> Isn’t your kind supposed to drive people insane?
+    <<set $CthulhuStanding = $CthulhuStanding + 1>>
+    {$CthulhuName}: The evening is still young.
+-> What do you do in your free time?
+    {$CthulhuName}: I do not experience time as 'free.' But I have been known to observe the slow collapse of civilizations. 
+    {$CthulhuName}: It is meditative.
+-> You're kind of hard to look at, you know that?
+    <<set $CthulhuStanding = $CthulhuStanding - 1>>
+    {$CthulhuName}: I had come in a form that I thought would be pleasing. 
+    {$CthulhuName}: I guess it is a personal failing of the perceiver, not the perceived.
 ===
 
 
 title: CthulhuEnding
 ---
 <<GetCharacter GameManager Cthulhu>>
+<<SetPortraitSprite GameManager "Neutral">>
+You decide you're going to ask {$CthulhuName} out.
+You spot him at another table, looking bored of the person he currently talking to.
+You seem to have caught him finishing up his current speed date. As he stands up, he looks over in your direction.
+He looks almost surprised to see you looking back at him. He bids the person at the table goodbye before heading towards you.
 <<TogglePortraitAnim GameManager>>
-<<SetPortraitSprite GameManager "Happy">>
-
-You ask Cthulhu out and make out awesome style. (Which is awesome bc tentacles)
+{$CthulhuName}: You seem to have your eyes on me.
+You tell {$CthulhuName} that you thought you and him had a good time talking and that you'd like to see where this goes.
+Surprisingly, he lets out a small, dark chuckle.
+{$CthulhuName}: I'm sure I don't have to remind you that mortals exposed to me for too long are driven mad, yes?
+You tell him that, yeah, you'd be driven mad. Mad for him.
+He stares at you, looking unamused. You feel like you might have messed up.
+Before you can apologize, his expression softens up.
+{$CthulhuName}: You really <i>are</i> interesting, aren't you.
+{$CthulhuName}: Sure. You are aware of the risks. If this is what you want, I have no reason to deny you.
+<<FadeScreen GameManager false 2>>
+<<TogglePortraitAnim GameManager>>
+With that, you and {$CthulhuName} stand up and head out, ready to start your life of potential madness and servitude!
+THE END!
 ===
