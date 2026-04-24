@@ -1017,20 +1017,19 @@ MonoBehaviour:
 
     Art: Mariia
 
-    Narrative: Rhys,
-    Zamar
+    Narrative: Rhys
 
-    Audio/Menus: Rudy
+    Audio/Menus:
+    Rudy
 
 
     Font used: Spooky Cat Font by 7NTypes
 
 
-    "Ghost
-    Story" Kevin MacLeod (incompetech.com)
+    "Ghost Story" Kevin MacLeod
+    (incompetech.com)
 
-    Licensed under Creative Commons:
-    By Attribution 4.0 License
+    Licensed under Creative Commons: By Attribution 4.0 License
 
     http://creativecommons.org/licenses/by/4.0/'
   m_isRightToLeft: 0
